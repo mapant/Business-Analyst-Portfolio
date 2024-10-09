@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj Pant's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: url('https://images.unsplash.com/photo-1517242022020-1b0c1c1c1c1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGJ1c3NpbmVzc3xlbnwwfHx8fDE2MzYyMjY0MjM&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: rgba(108, 93, 231, 0.8); /* Pastel purple with transparency */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeaa7; /* Pastel yellow */
+        }
+
+        section {
+            background: rgba(223, 230, 233, 0.9); /* Pastel gray with transparency */
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2d3436; /* Darker text for headings */
+        }
+
+        .accordion {
+            margin: 20px 0;
+        }
+
+        .accordion-item {
+            border: 1px solid #b2bec3; /* Light gray */
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .accordion-header {
+            background: #ffeaa7; /* Pastel yellow */
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .accordion-header:hover {
+            background: #fdcb6e; /* Darker yellow */
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background: #ffffff; /* White background for content */
+            border-radius: 0 0 5px 5px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .project {
+            flex: 1 1 30%;
+            margin: 10px;
+            border: 1px solid #b2bec3; /* Light gray */
+            padding: 10px;
+            border-radius: 5px;
+            background: #ffffff; /* White background for projects */
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(108, 93, 231, 0.8); /* Pastel purple with transparency */
+            color: #fff;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .skill {
+            background: #ffeaa7; /* Pastel yellow */
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px;
+            transition: transform 0.3s;
+            flex: 1 1 30%;
+            text-align: center;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background: #fdcb6e; /* Darker yellow */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Manoj Pant</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Professional Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Email: <a href="mailto:manoj-pant@outlook.com">manoj-pant@outlook.com</a></p>
+            <p>Phone: +91-8368108913</p>
+            <p>Location: Noida, Uttar Pradesh - 201301</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/manoj-pant-35129495" target="_blank">linkedin.com/in/manoj-pant-35129495</a></p>
+            <p>GitHub: <a href="https://github.com/mapant" target="_blank">github.com/mapant</a></p>
+            <p>With 9.5 years of overall experience and 5.6 years as a Business Analyst, I am seeking a dynamic role as a Senior Business Analyst or Consultant where I can leverage my extensive experience in data analysis, business intelligence, project management, and IT operations.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Business Analyst, Ayu Health (Mar 2023 – Aug 2024)</h3>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Led successful delivery of data-driven projects, boosting business performance by 15% through effective data analysis and visualization.</li>
+                            <li>Managed project scopes, timelines, and deliverables using Agile methodologies, reducing turnaround time by 20%.</li>
+                            <li>Implemented risk management strategies, ensuring adherence to project timelines and successful delivery.</li>
+                            <li>Facilitated customer-facing workshops to improve communication and maintain transparency throughout the project lifecycle.</li>
+                            <li>Designed and maintained dashboards in Power BI, Looker Studio, Excel, and Google Sheets, cutting report generation time by 30%.</li>
+                            <li>Collaborated with Product and Tech teams, prepared BRD and FRD documents, and facilitated workshops to gather requirements, reducing misalignment issues by 40% and improving accuracy by 25%.</li>
+                            <li>Implemented automated data extraction scripts and optimized SQL queries, halving manual data entry time and decreasing query execution time by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Business Analyst, Nokia Networks (Feb 2019 – Jan 2023)</h3>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Managed multiple projects, ensuring on-time delivery, adherence to budget, and high-quality outcomes.</li>
+                            <li>Enhanced data accuracy by 30% through the creation and maintenance of Power BI dashboards, enabling informed decision-making for global stakeholders.</li>
+                            <li>Reduced report turnaround time by 25% by efficiently managing and resolving Tableau tickets, ensuring the prompt delivery of critical data visualizations.</li>
+                            <li>Improved project delivery speed by 20% through the effective use of SQL and ETL processes, extracting and transforming meaningful data for essential assignments.</li>
+                            <li>Increased project success rate by 15% by implementing Agile methodologies, securing precise requirement gathering and thorough analysis.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">Reporting Analyst, Nokia Networks (Jan 2016 – Jan 2019)</h3>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Delivered key analytics and insights by leveraging IPM BI, SAP BI, MS Power BI, SQL, and Salesforce, driving a 20% improvement in business performance and 25% in tool efficiency.</li>
+                            <li>Maintained and documented Power BI reports and Power Automate flows, achieving 98% data accuracy, minimizing errors by 30%, and enhancing team utilization.</li>
+                            <li>Developed custom Power BI connectors for seamless integration with external data sources, improving accessibility and usability.</li>
+                            <li>Implemented advanced Excel macros for automated report generation, cutting manual processing time by 30% and boosting accuracy.</li>
+                            <li>Created and optimized reports for market regions, enhancing clarity and accelerating decision-making by 40%, which improved overall operational efficiency.</li>
+                            <li>Performed data extraction, manipulation, and analysis, resulting in a 25% improvement in processing efficiency.</li>
+                            <li>Resolved issues with Power BI dashboards and Power Automate flows, reducing system downtime by 35% and ensuring continuous service availability.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header">MIS Analyst, The Corporate Profiles (Dec 2014 – Dec 2015)</h3>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Developed and delivered MIS and dashboard reports, enhancing decision-making and operational efficiency across departments.</li>
+                            <li>Conducted in-depth data analysis to produce actionable insights through daily, weekly, monthly, and quarterly reports.</li>
+                            <li>Managed documentation, including plans, schedules, and scope statements, aligning efforts with broader objectives.</li>
+                            <li>Oversaw the generation and maintenance of accurate MIS data and bid submission documentation.</li>
+                            <li>Utilized advanced MS Excel functions, including V Lookup, H Lookup, and pivot tables, to perform complex data analysis and reporting effectively.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="gallery">
+                <div class="project">
+                    <h3>Customer Support Performance Dashboard</h3>
+                    <p>Developed a Tableau dashboard to track ticket resolution times, customer satisfaction, and team performance. Automated data processing with SQL and Power Automate, cutting manual work by 35%. The dashboard improved resolution times by 20% and boosted customer satisfaction by 10%.</p>
+                </div>
+                <div class="project">
+                    <h3>Nokia GSD Performance Analytics Solution</h3>
+                    <p>Developed a business analytics solution for Nokia's Global Service Delivery team, creating interactive dashboards using Power BI and Tableau to track KPIs. Automated reporting processes with Power Automate, reducing manual work by 30%. Conducted in-depth analysis using Excel and SQL, achieving a 20% reduction in operational costs and a 15% improvement in service delivery performance.</p>
+                </div>
+                <div class="project">
+                    <h3>Revenue and Performance Tracking Dashboard</h3>
+                    <p>Led the creation of a comprehensive dashboard for stakeholders to monitor sales and operational efficiency across multiple channels. Automated data extraction and reporting using Power BI and SQL, resulting in a 25% reduction in manual reporting and contributing to a 10% revenue increase through timely actions.</p>
+                </div>
+                <div class="project">
+                    <h3>Doctor’s App & Healthcare Analytics</h3>
+                    <p>Conducted a business analysis at Ayu Health, identifying key areas for improvement in healthcare operations. Authored BRD and FRD for a Doctor's app aimed at streamlining patient care. Designed Power BI dashboards for monitoring app performance and KPIs, leading to a 15% increase in operational efficiency.</p>
+                </div>
+                <div class="project">
+                    <h3>Automated Beat Plan Algorithm for Sales Team</h3>
+                    <p>Engineered an automated Beat Plan algorithm for the sales team, utilizing data analytics and K-means clustering to optimize sales routes. This initiative resulted in a 25% reduction in travel time and a 30% increase in daily customer visits, with findings integrated into a Power BI dashboard for real-time monitoring and decision-making.</p>
+                </div>
+                <div class="project">
+                    <h3>Agile Business Analytics and Reporting for SCM</h3>
+                    <p>Managed a business analytics and reporting system for Nokia’s Supply Chain Management division, employing Agile methodologies. Created BRD and FRD documents to define project scope, and led teams in delivering Power BI dashboards for global KPI tracking. Automated workflows, reducing reporting time by 30% and enhancing decision-making by 25%.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>MBA, Business Analytics, Manipal Academy of Higher Education (2024 – 2026)</li>
+                <li>BCA, Computer Programming & Applications, Mansarovar Global University (2018 – 2021)</li>
+                <li>GNIIT (Software Engineering) Diploma, National Institute of Information Technology (2011 – 2014)</li>
+                <li>Vocational Course in Information Technology, CBSE (2009 – 2011)</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill">Business Analysis</div>
+                <div class="skill">Data Analysis</div>
+                <div class="skill">Project Management</div>
+                <div class="skill">Requirements Gathering</div>
+                <div class="skill">Gap Analysis</div>
+                <div class="skill">Risk Management</div>
+                <div class="skill">JIRA</div>
+                <div class="skill">MS Project</div>
+                <div class="skill">Power BI</div>
+                <div class="skill">Tableau</div>
+                <div class="skill">SAP BI</div>
+                <div class="skill">Looker Studio</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Big Data</div>
+                <div class="skill">Python</div>
+                <div class="skill">MS Excel (Advanced)</div>
+                <div class="skill">MS Visio</div>
+                <div class="skill">Lucidchart</div>
+                <div class="skill">Canva</div>
+                <div class="skill">MS PowerPoint</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Microsoft - Power BI</li>
+                <li>NSA - Conducting Work Involving the U.S. Govt.</li>
+                <li>Case Management Process Training</li>
+                <li>Business Analysis Foundation</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to reach out via email or connect with me on LinkedIn.</p>
+            <a href="link-to-resume.pdf" download>Download Resume</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Manoj Pant. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.style.display = content.style.display === "block" ? "none" : "block";
+            });
+        });
+
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('testimonialModal');
+            if (event.target === modal) {
+                closeModal('testimonialModal');
+            }
+        }
+    </script>
+</body>
+</html>
